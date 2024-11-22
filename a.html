@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Token Generator</title>
-    <script src="./crypto-js.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
     <script>
         function stringBytes(str) {
             let sum = 0;
@@ -18,13 +18,10 @@
         function generateToken(account, password, period) {
             const time = Math.floor(Date.now() / 1000) + period;
             const token = account + password + time.toString();
-            const hash = crypto.createHash('md5').update(token).digest('hex');
+            const hash = CryptoJS.MD5(token).toString();
             const tokenValue = Math.floor(stringBytes(hash) * stringBytes(account) / stringBytes(password)).toString() + "|" + time.toString();
             return tokenValue;
         }
-        
-        // 注意：在网页环境中使用crypto模块可能需要额外的设置，因为它通常不是浏览器环境的一部分。
-        // 你可能需要使用Web Crypto API或者第三方库。
     </script>
 </head>
 
