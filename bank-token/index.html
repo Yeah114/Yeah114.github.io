@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>银行登录Token生成器</title>
+    <style src="./style.css"></style>
+    <script src="./crypto-js.min.js"></script>
+    <script src="./main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>银行登录Token生成器</h1>
+        <div>
+            <label for="account">账号:</label>
+            <input type="text" id="account" name="account">
+        </div>
+        <div>
+            <label for="password">密码:</label>
+            <input type="password" id="password" name="password">
+            <button onclick="togglePasswordVisibility()">显示密码</button>
+        </div>
+        <div>
+            <label for="period">有效期 (秒):</label>
+            <input type="number" id="period" name="period" value="100">
+        </div>
+        <button onclick="generateAndDisplayToken()">生成登录Token</button>
+        <div id="token"></div>
+        <div class="token-actions">
+            <button onclick="copyToken()">复制</button>
+            <button onclick="clearToken()">清空</button>
+        </div>
+        <div class="footer-text">由 Yeah Plugins 提供技术支持</div>
+    </div>
+
+</body>
+
+</html>
