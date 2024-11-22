@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
 
 <head>
@@ -26,24 +26,41 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
             text-align: center;
-            /* Center the token text */
         }
         
         label {
             display: block;
             margin-bottom: 5px;
             text-align: left;
-            /* Align labels to the left */
         }
         
-        input[type="text"],
-        input[type="password"],
-        input[type="number"] {
-            width: 100%;
-            padding: 10px;
+        .input-group {
+            display: flex;
+            align-items: center;
             margin-bottom: 20px;
+            justify-content: space-between; /* 新增此行，确保元素之间有间隔 */
+        }
+        .input-group input[type="text"],
+        .input-group input[type="password"],
+        .input-group input[type="number"] {
+            flex: 1;
+            padding: 10px;
             border: 1px solid #ddd;
             border-radius: 4px;
+        }
+        
+        .input-group button {
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        
+        .input-group button:hover {
+            background-color: #0056b3;
         }
         
         button {
@@ -56,6 +73,18 @@
             cursor: pointer;
             margin-bottom: 10px;
         }
+        #display {
+            padding: 10px; /* 调整为与输入框相同的内边距 */
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            width: auto; /* 将宽度设置为auto，使其自适应内容宽度 */
+            margin-left: 10px; /* 调整按钮与输入框之间的间隔 */
+        }
+        
         
         button:hover {
             background-color: #0056b3;
@@ -70,7 +99,6 @@
             color: #666;
             font-size: 12px;
             text-align: left;
-            /* Align the footer text to the left */
             margin-top: 20px;
         }
         
@@ -91,28 +119,13 @@
 <body>
     <div class="container">
         <h1>银行登录Token生成器</h1>
-        <div>
-            <label for="account">账号:</label>
-            <input type="text" id="account" name="account">
-        </div>
-        <div>
-            <label for="password">密码:</label>
-            <input type="password" id="password" name="password">
-            <button onclick="togglePasswordVisibility()">显示密码</button>
-        </div>
-        <div>
-            <label for="period">有效期 (秒):</label>
-            <input type="number" id="period" name="period" value="100">
-        </div>
-        <button onclick="generateAndDisplayToken()">生成登录Token</button>
+        <div class="input-group"><label for="account">账号:</label><input type="text" id="account" name="account"></div>
+        <div class="input-group"><label for="password">密码:</label><input type="password" id="password" name="password"><button onclick="togglePasswordVisibility()" id="display">显示密码</button></div>
+        <div class="input-group"><label for="period">有效期 (秒):</label><input type="number" id="period" name="period" value="100"></div><button onclick="generateAndDisplayToken()">生成登录Token</button>
         <div id="token"></div>
-        <div class="token-actions">
-            <button onclick="copyToken()">复制</button>
-            <button onclick="clearToken()">清空</button>
-        </div>
+        <div class="token-actions"><button onclick="copyToken()">复制</button><button onclick="clearToken()">清空</button></div>
         <div class="footer-text">由 Yeah Plugins 提供技术支持</div>
     </div>
-
 </body>
 
 </html>
