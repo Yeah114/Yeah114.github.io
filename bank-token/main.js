@@ -1,3 +1,7 @@
+document.getElementById('display').addEventListener('click', function(event) {
+    event.target.blur(); // 移除焦点
+});
+
 function togglePasswordVisibility() {
     const passwordInput = document.getElementById('password');
     const toggleButton = document.getElementById('display');
