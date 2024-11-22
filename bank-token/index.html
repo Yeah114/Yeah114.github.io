@@ -10,7 +10,7 @@
             font-family: 'Arial', sans-serif;
             background-color: #f4f4f4;
             margin: 0;
-            //padding: 20px;
+            padding: 20px;
             color: #333;
         }
         
@@ -22,7 +22,7 @@
             max-width: 400px;
             margin: auto;
             background: #fff;
-            //padding: 20px;
+            padding: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
             text-align: center;
@@ -44,13 +44,13 @@
         .input-group input[type="password"],
         .input-group input[type="number"] {
             flex: 1;
-            //padding: 10px;
+            padding: 10px;
             border: 1px solid #ddd;
             border-radius: 4px;
         }
         
         .input-group button {
-            //padding: 10px;
+            padding: 10px;
             background-color: #007bff;
             color: white;
             border: none;
@@ -65,7 +65,7 @@
         
         button {
             width: 100%;
-            //padding: 10px;
+            padding: 10px;
             background-color: #007bff;
             color: white;
             border: none;
@@ -73,16 +73,21 @@
             cursor: pointer;
             margin-bottom: 10px;
         }
+        
         #display {
-            //padding: 10px; /* 调整为与输入框相同的内边距 */
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 4px;
+            background-color: transparent; /* 将背景设置为透明，以便图像可见 */
+            border: none; /* 移除边框 */
+            padding: 0; /* 移除内边距 */
             cursor: pointer;
-            margin-bottom: 10px;
-            width: auto; /* 将宽度设置为auto，使其自适应内容宽度 */
-            margin-left: 10px; /* 调整按钮与输入框之间的间隔 */
+            margin-left: 10px; /* 根据需要调整间隔 */
+            width: auto; /* 使按钮宽度自适应图像宽度 */
+            height: auto; /* 使按钮高度自适应图像高度 */
+        }
+        
+        #display img {
+            display: block; /* 防止图像下方有额外的空间 */
+            height: 100%; /* 根据需要调整图像高度 */
+            width: auto; /* 根据需要调整图像宽度 */
         }
         
         
@@ -108,7 +113,7 @@
         
         .token-actions button {
             width: auto;
-            //padding: 5px 10px;
+            padding: 5px 10px;
             margin-left: 5px;
         }
     </style>
@@ -120,7 +125,10 @@
     <div class="container">
         <h1>银行登录Token生成器</h1>
         <div class="input-group"><label for="account">账号:</label><input type="text" id="account" name="account"></div>
-        <div class="input-group"><label for="password">密码:</label><input type="password" id="password" name="password"><button onclick="togglePasswordVisibility()" id="display">显示密码</button></div>
+        <div class="input-group"><label for="password">密码:</label><input type="password" id="password" name="password"><button onclick="togglePasswordVisibility()" id="display">
+                <img src="open.png" alt="显示密码">
+            </button>
+        </div>
         <div class="input-group"><label for="period">有效期 (秒):</label><input type="number" id="period" name="period" value="100"></div><button onclick="generateAndDisplayToken()">生成登录Token</button>
         <div id="token"></div>
         <div class="token-actions"><button onclick="copyToken()">复制</button><button onclick="clearToken()">清空</button></div>

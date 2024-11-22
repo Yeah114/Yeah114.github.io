@@ -1,12 +1,16 @@
 function togglePasswordVisibility() {
     const passwordInput = document.getElementById('password');
-    const toggleButton = document.querySelector('button[onclick="togglePasswordVisibility()"]');
+    const toggleButton = document.getElementById('display');
+    const img = toggleButton.querySelector('img');
+
     if (passwordInput.type === 'password') {
         passwordInput.type = 'text';
-        toggleButton.textContent = '隐藏密码';
+        img.src = 'close.png'; // 当密码可见时，显示关闭图标
+        img.alt = '隐藏密码';
     } else {
         passwordInput.type = 'password';
-        toggleButton.textContent = '显示密码';
+        img.src = 'open.png'; // 当密码不可见时，显示打开图标
+        img.alt = '显示密码';
     }
 }
 
