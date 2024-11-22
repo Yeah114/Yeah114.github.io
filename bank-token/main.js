@@ -5,11 +5,11 @@ function togglePasswordVisibility() {
 
     if (passwordInput.type === 'password') {
         passwordInput.type = 'text';
-        img.src = 'close.png'; // 当密码可见时，显示关闭图标
+        img.src = 'open.png';
         img.alt = '隐藏密码';
     } else {
         passwordInput.type = 'password';
-        img.src = 'open.png'; // 当密码不可见时，显示打开图标
+        img.src = 'close.png';
         img.alt = '显示密码';
     }
 }
