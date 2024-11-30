@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>银行注册Token生成器</title>
+    <style>
+        body {
+            background-image: url('https://www.loliapi.com/acg/');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        h1 {
+            color: #5a5a5a;
+        }
+        
+        .container {
+            max-width: 400px;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.5);
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            text-align: left;
+        }
+        
+        .input-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            justify-content: space-between;
+        }
+        
+        .input-group input[type="text"],
+        .input-group input[type="password"],
+        .input-group input[type="number"] {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        
+        .input-group button:hover {
+            background-color: #0056b3;
+        }
+        
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+              
+        .input-group button {
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 10px;
+            height: 34px;
+        }
+        
+        #display {
+            background-color: transparent;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            margin-left: 10px;
+            width: auto;
+            height: 100%;
+        }
+        
+        #display img {
+            display: block;
+            height: 100%;
+            width: auto;
+            max-width: 100%;
+            max-height: 100%;
+            outline: none;
+        }
+        
+        #display img:focus {
+            outline: none;
+        }
+        
+        button:hover {
+            background-color: #0056b3;
+        }
+        
+        #token {
+            margin-top: 20px;
+            font-weight: bold;
+            word-wrap: break-word; /* 或使用 overflow-wrap: break-word; */
+            width: 200px; /* 可以设置一个宽度，以便看到换行的效果 */
+        }
+        
+        .footer-text {
+            color: #666;
+            font-size: 12px;
+            text-align: left;
+            margin-top: 20px;
+        }
+        
+        .token-actions {
+            text-align: right;
+        }
+        
+        .token-actions button {
+            width: auto;
+            padding: 5px 10px;
+            margin-left: 5px;
+        }
+    </style>
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>注册Token生成器</h1>
+        <div class="input-group"><label for="account">账号:</label><input type="text" id="account" name="account"></div>
+        <div class="input-group"><label for="password">密码:</label><input type="password" id="password" name="password"><button onclick="togglePasswordVisibility()" id="display">
+                <img src="close.png" alt="显示密码">
+            </button>
+        </div>
+        <div class="input-group"><label for="period">有效期 (秒):</label><input type="number" id="period" name="period" value="100"></div>
+        <div class="input-group"><label for="public">加密公钥（不填使用默认）:</label><input type="text" id="public" name="public"></div>
+        <button onclick="generateAndDisplayToken()">生成银行登录Token</button>
+        <div id="token"></div>
+        <div class="token-actions"><button onclick="copyToken()">复制</button><button onclick="clearToken()">清空</button></div>
+        <div class="footer-text">由 Yeah Plugins 提供技术支持</div>
+    </div>
+</body>
+
+</html>
