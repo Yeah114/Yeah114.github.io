@@ -131,5 +131,5 @@ const encryptedMessage = encrypt(msg, keypair.public);
 const decryptedMessage = decrypt(encryptedMessage, keypair.private);
 
 console.log("Original message: " + msg);
-console.log("Encrypted message: " + encryptedMessage);
+alert("Encrypted message: " + encryptedMessage);
 console.log("Decrypted message: " + decryptedMessage);
