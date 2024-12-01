@@ -1,0 +1,114 @@
+-- © 2024 Yeah Plugins
+-- Authors: Yeah (耶)
+-- QQ: 1246517085 (Yeah)
+-- QQ Group: 870300327
+-- Thank you for your use
+
+local omega = require("omega")
+local json = require("json")
+--- @type Coromega
+local coromega = require("coromega").from(omega)
+function string:args(...)
+    local message = self
+    local args = {...}
+    return message:gsub("%%%(%d+%)", function(n)
+        n = n:gsub("%%%(", ""):gsub("%)", "")
+        n = tonumber(n)
+        if args[n] then
+            return tostring(args[n])
+        else
+            return "%("..tostring(n)..")"
+        end
+    end)
+end
+function choose(player, options, func, ending_text)
+    -- 确保options是一个表，并且至少有一个选项
+    if type(options) ~= "table" or #options == 0 then
+        return nil
+    end
+
+    -- 构建选择提示信息
+    local choice_message =  ""
+    local ending = "\n"
+    for index, option in ipairs(options) do
+        if index == #options then
+            if ending_text then
+                ending = "\n" .. ending_text
+            else
+                ending = ""
+            end
+        end
+        if func then
+            choice_message = choice_message .. func(index, option)
+        else
+            choice_message = choice_message .. ("[%(1)] %(2)"):args(tostring(index), option)
+        end
+        choice_message = choice_message .. ending
+    end
+
+    -- 获取玩家的选择
+    local choice = player:ask(choice_message)
+
+    -- 确保玩家的选择是一个有效的数字，并且在选项范围内
+    local choice_index = tonumber(choice)
+    if choice_index and 1 <= choice_index and choice_index <= #options then
+        return options[choice_index]
+    else
+        return choose(player, options, func, ending_text)
+    end
+end
+local cqhttp = require("cqhttp").run(coromega)
+menu = {}
+
+print("config of cqhttp菜单:  ",json.encode(coromega.config))
+
+-- 如果你需要调试请将下面一段解除注释，关于调试的方法请参考文档
+-- local dbg = require('emmy_core')
+-- dbg.tcpConnect('localhost', 9966)
+-- print("waiting...")
+-- for i=1,1000 do -- 调试器需要一些时间来建立连接并交换所有信息
+--     -- 如果始终无法命中断点，你可以尝试将 1000 改的更大
+--     print(".")
+-- end
+-- print("end")
+coromega:when_called_by_api_named("/cqhttp/menu"):start_new(function(data)
+    table.insert(menu, data)
+    coromega:print(("当前已注册" .. tostring(#menu) .. "个cqhttp菜单项"))
+    return true
+end)
+
+cqhttp.add_cqhttp_menu({
+    triggers = { "菜单" },
+    argument_hint = "[无]",
+    usage = "显示所有菜单项目"
+}, function(player, msg)
+    local contents = {}
+    local options = {}
+    for index, data in ipairs(menu) do
+        local text = data.info.triggers[1] .. " " .. data.info.argument_hint .. " " .. data.info.usage
+        contents[text] = data.uuid
+        table.insert(options, text)
+    end
+    table.insert(options, "退出")
+    local result = choose(player, options, function(index, option)
+        local message = ""
+        if index == 1 then
+            message = "请选择菜单项\n"
+        end
+        return message .. ("[%(1)] %(2)"):args(index, option)
+    end)
+    if result == "退出" then
+        player:say("已退出")
+        return
+    end
+    coromega:publish_info("/cqhttp/item", { uuid = contents[result], sender = player.sender, source = player.source, user_id = player.user_id })
+end)
+
+cqhttp.add_cqhttp_menu({
+    triggers = { "复读" },
+    argument_hint = "[无]",
+    usage = "复读"
+}, function(player, msg)
+    player:say(msg.raw_msg:gsub("^复读", ""))
+end)
+coromega:run()
