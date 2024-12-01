@@ -1,1 +1,69 @@
-[{"\u73a9\u5bb6\u5c0f\u5e97": {"\u718a\u5b69\u5b50\u4e14\u4e0d\u4f1a\u6307\u4ee4": 2147483647, "Builder_Bot": 2147483647, "\u563f\u6211\u662f\u7d2b\u5361": 2147483647, "fb_bot": 2147483647, "DevilBOT1": 1731409203, "\u5c0f\u745a\u97a0\u5416": 0, "\u4fee\u72d7\u68a6\u5e7b\u673a\u5668\u4eba": 0, "SkyblueSuper": 0, "\u9646\u5e08FB\u673a\u5668\u4eba": 1734669908, "\u661f\u4e00\u754c\u7763\u7ba1": 0, "sky\u4e28feather": 0, "STYLE_STARS": 0, "\u6a59\u5b50\u7684\u673a\u5668\u4ebai": 1734944860}, "\u62bd\u5956": {"DevilBOT1": 2147483647, "\u5c0f\u745a\u97a0\u5416": 2147483647, "\u563f\u6211\u662f\u7d2b\u5361": 2147483647, "\u718a\u5b69\u5b50\u4e14\u4e0d\u4f1a\u6307\u4ee4": 2147483647, "Builder_Bot": 2147483647, "\u4e39\u9752bot": 0, "SkyblueSuper": 0, "\u9646\u5e08FB\u673a\u5668\u4eba": 0, "\u5c0f\u6c90_\u667a\u80fd\u52a9\u624b": 0, "sky\u4e28feather": 0, "STYLE_STARS": 0, "k\u98de\u7231\u5403\u751f\u8c6a": 0}, "\u6295\u7968\u8e22\u4eba": {"DevilBOT1": 2147483647, "\u5b88\u536b\u6bbf\u4e0b\u7684\u673a\u5668\u4eba": 2147483647, "\u718a\u5b69\u5b50\u4e14\u4e0d\u4f1a\u6307\u4ee4": 2147483647, "\u5c0f\u745a\u97a0\u5416": 2147483647, "Builder_Bot": 2147483647, "SkyblueSuper": 0, "\u5764\u5668\u4eba\u4e9a\u6258\u8389": 0, "sky\u4e28feather": 0, "STYLE_STARS": 0, "\u6cb3\u91cc_BOT": 0}, "\u79f0\u53f7\u7cfb\u7edf": {"DevilBOT1": 2147483647, "\u517b\u732b\u7684\u72d0\u72f866": 2147483647, "\u517b\u732b\u7684\u72d0\u72f877": 2147483647, "\u5c0f\u745a\u97a0\u5416": 2147483647, "MZC\u4e36\u5927\u7ba1\u5bb6": 2147483647, "Builder_Bot": 2147483647, "\u4fee\u72d7\u68a6\u5e7b\u673a\u5668\u4eba": 0, "mOg\u673a\u5668\u4eba": 0, "SkyblueSuper": 0, "\u5c0f\u6c90_\u667a\u80fd\u52a9\u624b": 0, "sky\u4e28feather": 0, "STYLE_STARS": 0}, "\u670d\u670d\u7269\u54c1\u4e92\u901a": {"DevilBOT1": 2147483647, "\u5c0f\u745a\u97a0\u5416": 2147483647, "Builder_Bot": 2147483647, "SkyblueSuper": 0, "sky\u4e28feather": 0, "STYLE_STARS": 0}, "\u4e94\u5b50\u68cb": {}}]
+[
+    {
+        "玩家小店": {
+            "熊孩子且不会指令": 2147483647,
+            "Builder_Bot": 2147483647,
+            "嘿我是紫卡": 2147483647,
+            "fb_bot": 2147483647,
+            "DevilBOT1": 1731409203,
+            "小瑚鞠吖": 0,
+            "修狗梦幻机器人": 0,
+            "SkyblueSuper": 0,
+            "陆师FB机器人": 1734669908,
+            "星一界督管": 0,
+            "sky丨feather": 0,
+            "STYLE_STARS": 0,
+            "浩南哥哥ia": 1734944860
+        },
+        "抽奖": {
+            "DevilBOT1": 2147483647,
+            "小瑚鞠吖": 2147483647,
+            "嘿我是紫卡": 2147483647,
+            "熊孩子且不会指令": 2147483647,
+            "Builder_Bot": 2147483647,
+            "丹青bot": 0,
+            "SkyblueSuper": 0,
+            "陆师FB机器人": 0,
+            "小沐_智能助手": 0,
+            "sky丨feather": 0,
+            "STYLE_STARS": 0,
+            "k飞爱吃生豪": 0
+        },
+        "投票踢人": {
+            "DevilBOT1": 2147483647,
+            "守卫殿下的机器人": 2147483647,
+            "熊孩子且不会指令": 2147483647,
+            "小瑚鞠吖": 2147483647,
+            "Builder_Bot": 2147483647,
+            "SkyblueSuper": 0,
+            "坤器人亚托莉": 0,
+            "sky丨feather": 0,
+            "STYLE_STARS": 0,
+            "河里_BOT": 0
+        },
+        "称号系统": {
+            "DevilBOT1": 2147483647,
+            "养猫的狐狸66": 2147483647,
+            "养猫的狐狸77": 2147483647,
+            "小瑚鞠吖": 2147483647,
+            "MZC丶大管家": 2147483647,
+            "Builder_Bot": 2147483647,
+            "修狗梦幻机器人": 0,
+            "mOg机器人": 0,
+            "SkyblueSuper": 0,
+            "小沐_智能助手": 0,
+            "sky丨feather": 0,
+            "STYLE_STARS": 0
+        },
+        "服服物品互通": {
+            "DevilBOT1": 2147483647,
+            "小瑚鞠吖": 2147483647,
+            "Builder_Bot": 2147483647,
+            "SkyblueSuper": 0,
+            "sky丨feather": 0,
+            "STYLE_STARS": 0
+        },
+        "五子棋": {},
+        "银行": {}
+    }
+]
